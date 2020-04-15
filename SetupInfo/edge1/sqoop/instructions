@@ -1,0 +1,4 @@
+Using Sqoop: sqoop-1.4.7.bin__hadoop-2.6.0
+sqoop is sql over hadoop
+Here we need to put mysql-connector-jar in lib
+Also avro-1.8.1.jar in lib

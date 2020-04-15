@@ -1,0 +1,13 @@
+This is an instruction file should not be kept there.
+I have only copied the main configuration files:
+
+The main files are:
+1)core-site.xml
+2)hadoop-env.sh
+3)hdfs-site.xml
+4)mapred-site.xml
+5)slaves
+6)yarn-site.xml
+
+Pay Attention on above mentioned files.
+

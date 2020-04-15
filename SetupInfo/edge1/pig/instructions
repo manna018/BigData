@@ -1,0 +1,3 @@
+Using pig-0.16.0 
+No such configuratioin needed. It configures itself from classpath itself
+Sometimes we may need to do so in properties file which I have not done

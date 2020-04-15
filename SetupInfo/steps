@@ -1,0 +1,33 @@
+There are a few steps to setup Hadoop Cluster
+1)Using VMWare to create Nodes
+	Nodes can be of two types:
+	1.1. Cluster Nodes
+	1.2. Edge Nodes: They dont run cluster services on it but they do run client process on it which may be taking help from cluster
+2)All the nodes must be pinging each other
+	Here you must do password less ssh to each other 
+	It is itself a errorprone task in starting.Once done we are good to go.
+	On each node do these things:
+	>install openssh-server
+	>generate public and private keys without password and file
+	>add other machine's and itself's .pub key to known_hosts
+	
+	Must try all the ssh from all the machines to one another.
+3)Configuration Files
+	Here we put configuration files in their location which can be modified later as per need.
+	Generally we put NameNode and ResourceManager at different nodes so that any machine couldn't be overloaded.
+	
+4)Editing .bashrc files.
+	Before adding paths to the bashrc dont miss to create symbolic links
+	**symbolic links come in handy when we want to create various versions of any sodtware
+	JAVA8 IS Preferrable for hadoop
+	Copy it as it is as per the configuration files.
+5)making data directories and providing permission over it.
+
+-------------------------------------Starting Cluster-----------------------
+Suppose my NameNode is on m1 then :
+mohit@m1:/usr/local/hadoop$sbin/start-dfs.sh
+
+
+m1:9000 shows UI
+and my Resource Manager is on m2 then:
+mohit@m2:/usr/local/hadoop$sbin/start-yarn.sh

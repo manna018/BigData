@@ -1,0 +1,12 @@
+Using Hive: apache-hive-2.1..0-bin
+Here I have mentioned mysql properties but I won't be using them
+Hive can have metastore in two ways:
+	1)Inside Mysql Db itself
+	2)inside a file called metastore_db
+Whenever we run hive metastore_db is created.
+
+Hive can be executed over hdfs and yarn layer or any one of them or none of them.
+So it may happen that  we create table in hdfs and miss it in metastore_db because we are adding it from different place.
+
+
+** Remember to add mysql-connector-java-5.1.48.jar in lib
