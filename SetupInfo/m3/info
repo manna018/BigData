@@ -1,0 +1,7 @@
+Using apache-hive-2.1.0.bin
+Using spark-2.3.3-hin-hadoop2.6
+Using hadoop-2.6.5
+
+This Node doesn't run any master services.
+in hadoop it is DataNode
+in spark it is worker

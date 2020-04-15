@@ -1,0 +1,4 @@
+This node runs NameNode on it.
+A DataNode is also there.
+
+When using Spark it runs Slave .

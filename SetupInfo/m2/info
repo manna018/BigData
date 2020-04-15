@@ -1,0 +1,6 @@
+Here we set up Resource Manager and Master of Spark Standalone
+
+For Spark
+keep Spark files  on all the nodes but the configuration is taken care of by master node.
+In the slaves file. slaves are mentioned
+For history server log files must match

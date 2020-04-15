@@ -1,0 +1,55 @@
+<configuration>
+
+  <property>
+    <name>yarn.scheduler.capacity.maximum-applications</name>
+    <value>10000</value>
+    <description>
+      Maximum number of applications that can be pending and running.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.queues</name>
+    <value>default,prod,dev</value>
+    <description>
+      The queues at the this level (root is the root queue).
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.capacity</name>
+    <value>40</value>
+    <description>Default queue target capacity.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.capacity</name>
+    <value>40</value>
+    <description>Default queue target capacity.</description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.default.capacity</name>
+    <value>20</value>
+    <description>Default queue target capacity.</description>
+  </property>
+
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.maximum-capacity</name>
+    <value>100</value>
+    <description>
+      The maximum capacity of the default queue. 
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.maximum-capacity</name>
+    <value>100</value>
+    <description>
+      The maximum capacity of the default queue. 
+    </description>
+  </property>
+
+
+</configuration>

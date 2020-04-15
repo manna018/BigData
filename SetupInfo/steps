@@ -31,3 +31,7 @@ mohit@m1:/usr/local/hadoop$sbin/start-dfs.sh
 m1:9000 shows UI
 and my Resource Manager is on m2 then:
 mohit@m2:/usr/local/hadoop$sbin/start-yarn.sh
+
+use $jsp
+to view processes running
+use $nmap <ip> to running ports
