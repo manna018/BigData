@@ -406,7 +406,7 @@ Time taken: 386.721 seconds
 ```
 >select from out3
 ```
-hive> sseletct * from out3 limit 20;
+hive> select * from out3 limit 20;
 OK
 low	725221.3399999988
 middle	1855861.669999996
