@@ -1,0 +1,357 @@
+Script started on 2020-04-16 15:30:21+0530
+mohit:~/MyProjects/BigData/practice/hive (master) $ ssh m2
+mohit@m2's password:
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.15.0-45-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:	   https://landscape.canonical.com
+ * Support:	   https://ubuntu.com/advantage
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Apr 16 13:30:18 2020 from 192.168.43.115
+mohit@m2:~$ jps
+8003 JobHistoryServer
+4101 SecondaryNameNode
+4231 ResourceManager
+8156 Jps
+3981 DataNode
+4351 NodeManager
+mohit@m2:~$ logout
+Connection to m2 closed.
+mohit:~/MyProjects/BigData/practice/hive (master) $ ssh edge1
+mohit@edge1's password:
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.15.0-45-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:	   https://landscape.canonical.com
+ * Support:	   https://ubuntu.com/advantage
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Apr 16 15:26:14 2020 from 192.168.43.115
+mohit@edge1:~$ ls
+Desktop    Downloads  Music    Pictures  Templates
+Documents  java8      MySqoop  Public	 Videos
+mohit@edge1:~$ cd $HIVE_HOME
+mohit@edge1:/usr/local/hive$ cd assign4/
+mohit@edge1:/usr/local/hive/assign4$ vi emp.txt
+"emp.txt"x[NewNFile]le]~    +q436f+q6b75+q6b64+q6b72+q6b6c+q2332+q2334+q2569+q2a37+q6b31E348: No string under cursor0,0-1All0,0-1All0,0-1All0,0-1All-- INSERT --0,1Allwetha,250000,Chennai						    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   0,0-1All
+"emp.txt"k[New]05L,K88Cawritten***tarun,300000,Pondi****anita,250000,Selam54***anita,250000,Selam**anita,250000,Selam*anita,250000,Selamanita,250000,Selam3***tarun,300000,Pondi**tarun,300000,Pondi*tarun,300000,Ponditarun,300000,Pondi2***anamika,200000,Kanyakumari**anamika,200000,Kanyakumari*anamika,200000,Kanyakumarianamika,200000,Kanyakumari1iwetha,250000,Chennaiwetha,250000,Chennai1swetha,250000,Chennai22345,15,0-1All:wq
+mohit@edge1:/usr/local/hive/assign4$ vi email.txt
+"email.txt"x[NewNFile]+q436f+q6b75+q6b64+q6b72+q6b6c+q2332+q2334+q2569+q2a37+q6b31-- INSERT --0,1All								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     0,0-1All~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 ~									~								       ~								      ~ 								     ~									    ~									   ~									  ~									 0,0-1All
+****email.txt****swetha,swetha@gmail.com****tarun,tarun@edureka.in****nagesh,nagesh@yahoo.com****venkatesh,venki@gmail.com765432432109 87654321
+~								       1,1All
+"email.txt" [New] 5L, 98C written				       1,1All***swetha,swetha@gmail.com**swetha,swetha@gmail.com*swetha,swetha@gmail.comswetha,swetha@gmail.com23***nagesh,nagesh@yahoo.com**nagesh,nagesh@yahoo.com*nagesh,nagesh@yahoo.com2***tarun,tarun@edureka.in**tarun,tarun@edureka.in*tarun,tarun@edureka.intarun,tarun@edureka.in34***venkatesh,venki@gmail.com**venkatesh,venki@gmail.com*venkatesh,venki@gmail.comvenkatesh,venki@gmail.com3nagesh,nagesh@yahoo.com3,1All:wq
+mohit@edge1:/usr/local/hive/assign4$ hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-2.6.5/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+
+Logging initialized using configuration in jar:file:/usr/local/apache-hive-2.1.0-bin/lib/hive-common-2.1.0.jar!/hive-log4j2.properties Async: true
+Exception in thread "main" java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.HiveException: org.apache.hadoop.hive.ql.metadata.HiveException: MetaException(message:Hive metastore database is not initialized. Please use schematool (e.g. ./schematool -initSchema -dbType ...) to create the schema. If needed, don't forget to include the option to auto-create the underlying database in your JDBC connection string (e.g. ?createDatabaseIfNotExist=true for mysql))
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:578)
+	at org.apache.hadoop.hive.ql.session.SessionState.beginStart(SessionState.java:518)
+	at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:705)
+	at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:641)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: org.apache.hadoop.hive.ql.metadata.HiveException: MetaException(message:Hive metastore database is not initialized. Please use schematool (e.g. ./schematool -initSchema -dbType ...) to create the schema. If needed, don't forget to include the option to auto-create the underlying database in your JDBC connection string (e.g. ?createDatabaseIfNotExist=true for mysql))
+	at org.apache.hadoop.hive.ql.metadata.Hive.registerAllFunctionsOnce(Hive.java:226)
+	at org.apache.hadoop.hive.ql.metadata.Hive.<init>(Hive.java:366)
+	at org.apache.hadoop.hive.ql.metadata.Hive.create(Hive.java:310)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getInternal(Hive.java:290)
+	at org.apache.hadoop.hive.ql.metadata.Hive.get(Hive.java:266)
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:545)
+	... 9 more
+Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: MetaException(message:Hive metastore database is not initialized. Please use schematool (e.g. ./schematool -initSchema -dbType ...) to create the schema. If needed, don't forget to include the option to auto-create the underlying database in your JDBC connection string (e.g. ?createDatabaseIfNotExist=true for mysql))
+	at org.apache.hadoop.hive.ql.metadata.Hive.getAllFunctions(Hive.java:3593)
+	at org.apache.hadoop.hive.ql.metadata.Hive.reloadFunctions(Hive.java:236)
+	at org.apache.hadoop.hive.ql.metadata.Hive.registerAllFunctionsOnce(Hive.java:221)
+	... 14 more
+Caused by: MetaException(message:Hive metastore database is not initialized. Please use schematool (e.g. ./schematool -initSchema -dbType ...) to create the schema. If needed, don't forget to include the option to auto-create the underlying database in your JDBC connection string (e.g. ?createDatabaseIfNotExist=true for mysql))
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3364)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3336)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getAllFunctions(Hive.java:3590)
+	... 16 more
+mohit@edge1:/usr/local/hive/assign4$ ls
+custs	   email.txt  metastore_db    txns1.txt
+derby.log  emp.txt    practicals.txt
+mohit@edge1:/usr/local/hive/assign4$ rm -rfmmetastore_db
+mohit@edge1:/usr/local/hive/assign4$ rm -rf derby.log
+mohit@edge1:/usr/local/hive/assign4$ cd ..
+mohit@edge1:/usr/local/hive$ hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-2.6.5/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+
+Logging initialized using configuration in jar:file:/usr/local/apache-hive-2.1.0-bin/lib/hive-common-2.1.0.jar!/hive-log4j2.properties Async: true
+Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+hive> create table employee(name stiring,salary float,coity string)
+    > row format dilimelimited
+    > firelds terminated by ',';
+OK
+Time taken: 1.713 seconds
+hive> load ---loading data---- loading data
+hive> load data local inpath 'assign4/emp.txt into ' into table employee;
+Loading data to table default.employee
+OK
+Time taken: 1.134 seconds
+hive> select &* from emplyoyee where name-='tarun';
+OK
+tarun	300000.0	Pondi
+Time taken: 1.389 seconds, Fetched: 1 row(s)
+hive> cretaate table mailid(name string,email string)
+    > row format delimited
+    > fields terminated by ',';
+OK
+Time taken: 0.237 seconds
+hive> --- load data
+hive> load data local inpath 'assgign4/email.txt' ninto tabele mailid;
+Loading data to table default.mailid
+OK
+Time taken: 0.49 seconds
+hive> select a.name ,a.cirty,a.salar--joining tables
+hbvon a.name=b.name;a.city,a.salaryb,b.email from employee a join mailid
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = mohit_20200416160348_c7b70bb3-7367-4365-af18-4bd6ba9041a8
+Total jobs = 1
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-2.6.5/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+2020-04-16 16:03:53	Starting to launch local task to process map join;	maximum memory = 518979584
+2020-04-16 16:03:54	Dump the side-table for tag: 0 with group count: 5 into file: file:/tmp/mohit/72d0b488-ce03-4694-aad0-3e309a011f81/hive_2020-04-16_16-03-48_084_422940333338422491-1/-local-10004/HashTable-Stage-3/MapJoin-mapfile00--.hashtable
+2020-04-16 16:03:54	Uploaded 1 File to: file:/tmp/mohit/72d0b488-ce03-4694-aad0-3e309a011f81/hive_2020-04-16_16-03-48_084_422940333338422491-1/-local-10004/HashTable-Stage-3/MapJoin-mapfile00--.hashtable (426 bytes)
+2020-04-16 16:03:54	End of local task; Time Taken: 1.454 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1587015889950_0006, Tracking URL = http://m2:8088/proxy/application_1587015889950_0006/
+Kill Command = /usr/local/hadoop-2.6.5/bin/hadoop job  -kill job_1587015889950_0006
+Hadoop job information for Stage-3: number of mappers: 1; number of reducers: 0
+2020-04-16 16:04:03,649 Stage-3 map = 0%,  reduce = 0%
+2020-04-16 16:04:10,181 Stage-3 map = 100%,  reduce = 0%, Cumulative CPU 1.58 sec
+MapReduce Total cumulative CPU time: 1 seconds 580 msec
+Ended Job = job_1587015889950_0006
+MapReduce Jobs Launched:
+Stage-Stage-3: Map: 1	Cumulative CPU: 1.58 sec   HDFS Read: 7018 HDFS Write: 212 SUCCESS
+Total MapReduce CPU Time Spent: 1 seconds 580 msec
+OK
+swetha	Chennai 250000.0	swetha@gmail.com
+tarun	Pondi	300000.0	tarun@edureka.in
+	NULL	NULL	NULL
+Time taken: 24.291 seconds, Fetched: 3 row(s)
+hive> seellect a.name,a.city,a.salary,b.email from employee a right out-- lel left outer join
+join>mailidtbaonaa.name=b.name;aalary,b.email from employee a ra left outer
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = mohit_20200416160706_28bae13e-c7b3-4011-b105-91dc4672f40a
+Total jobs = 1
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-2.6.5/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+2020-04-16 16:07:11	Starting to launch local task to process map join;	maximum memory = 518979584
+2020-04-16 16:07:12	Dump the side-table for tag: 1 with group count: 5 into file: file:/tmp/mohit/72d0b488-ce03-4694-aad0-3e309a011f81/hive_2020-04-16_16-07-06_578_7385052802093773599-1/-local-10004/HashTable-Stage-3/MapJoin-mapfile11--.hashtable
+2020-04-16 16:07:12	Uploaded 1 File to: file:/tmp/mohit/72d0b488-ce03-4694-aad0-3e309a011f81/hive_2020-04-16_16-07-06_578_7385052802093773599-1/-local-10004/HashTable-Stage-3/MapJoin-mapfile11--.hashtable (448 bytes)
+2020-04-16 16:07:12	End of local task; Time Taken: 0.991 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1587015889950_0007, Tracking URL = http://m2:8088/proxy/application_1587015889950_0007/
+Kill Command = /usr/local/hadoop-2.6.5/bin/hadoop job  -kill job_1587015889950_0007
+Hadoop job information for Stage-3: number of mappers: 1; number of reducers: 0
+2020-04-16 16:10:20,813 Stage-3 map = 0%,  reduce = 0%
+2020-04-16 16:10:26,223 Stage-3 map = 100%,  reduce = 0%, Cumulative CPU 0.9 sec
+MapReduce Total cumulative CPU time: 900 msec
+Ended Job = job_1587015889950_0007
+MapReduce Jobs Launched:
+Stage-Stage-3: Map: 1	Cumulative CPU: 0.9 sec   HDFS Read: 6772 HDFS Write: 292 SUCCESS
+Total MapReduce CPU Time Spent: 900 msec
+OK
+swetha	Chennai 250000.0	swetha@gmail.com
+anamika Kanyakumari	200000.0	NULL
+tarun	Pondi	300000.0	tarun@edureka.in
+anita	Selam	250000.0	NULL
+	NULL	NULL	NULL
+Time taken: 200.777 seconds, Fetched: 5 row(s)
+hive> -- right outer joing
+jjoinmmailidbboonaa.name=b.name;oouterna.city,a.salary,b.email from employee a left outer join mailid b on a.name=b.name; outer j
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = mohit_20200416161225_0cba5a03-31e5-4354-8d02-0636984e7241
+Total jobs = 1
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-2.6.5/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+2020-04-16 16:12:30	Starting to launch local task to process map join;	maximum memory = 518979584
+2020-04-16 16:12:31	Dump the side-table for tag: 0 with group count: 5 into file: file:/tmp/mohit/72d0b488-ce03-4694-aad0-3e309a011f81/hive_2020-04-16_16-12-25_881_2858444477782687856-1/-local-10004/HashTable-Stage-3/MapJoin-mapfile20--.hashtable
+2020-04-16 16:12:31	Uploaded 1 File to: file:/tmp/mohit/72d0b488-ce03-4694-aad0-3e309a011f81/hive_2020-04-16_16-12-25_881_2858444477782687856-1/-local-10004/HashTable-Stage-3/MapJoin-mapfile20--.hashtable (426 bytes)
+2020-04-16 16:12:31	End of local task; Time Taken: 1.04 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1587015889950_0008, Tracking URL = http://m2:8088/proxy/application_1587015889950_0008/
+Kill Command = /usr/local/hadoop-2.6.5/bin/hadoop job  -kill job_1587015889950_0008
+Hadoop job information for Stage-3: number of mappers: 1; number of reducers: 0
+2020-04-16 16:12:39,131 Stage-3 map = 0%,  reduce = 0%
+2020-04-16 16:13:40,033 Stage-3 map = 0%,  reduce = 0%
+2020-04-16 16:14:40,632 Stage-3 map = 0%,  reduce = 0%
+2020-04-16 16:15:40,968 Stage-3 map = 0%,  reduce = 0%
+2020-04-16 16:15:47,164 Stage-3 map = 100%,  reduce = 0%, Cumulative CPU 0.99 sec
+MapReduce Total cumulative CPU time: 990 msec
+Ended Job = job_1587015889950_0008
+MapReduce Jobs Launched:
+Stage-Stage-3: Map: 1	Cumulative CPU: 0.99 sec   HDFS Read: 6696 HDFS Write: 287 SUCCESS
+Total MapReduce CPU Time Spent: 990 msec
+OK
+swetha	Chennai 250000.0	swetha@gmail.com
+tarun	Pondi	300000.0	tarun@edureka.in
+NULL	NULL	NULL	nagesh@yahoo.com
+NULL	NULL	NULL	venki@gmail.com
+	NULL	NULL	NULL
+Time taken: 203.432 seconds, Fetched: 5 row(s)
+hive> select a.name,a.city,a.salary,b.email from employee a right outer join mailid b on a.name=b.name;er join mailid b on a.name=b.name;-- right outer joinfull outer join
+joinmmailidbboonaa.name=b.name;oouterjncity,a.salary,b.email from employee a right outer join mailid b on a.name=b.name; outer
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = mohit_20200416161717_10fc1440-1ecf-4349-80a1-ab8391a767d5
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1587015889950_0009, Tracking URL = http://m2:8088/proxy/application_1587015889950_0009/
+Kill Command = /usr/local/hadoop-2.6.5/bin/hadoop job  -kill job_1587015889950_0009
+Hadoop job information for Stage-1: number of mappers: 2; number of reducers: 1
+2020-04-16 16:17:24,204 Stage-1 map = 0%,  reduce = 0%
+2020-04-16 16:17:32,614 Stage-1 map = 50%,  reduce = 0%, Cumulative CPU 0.87 sec
+2020-04-16 16:17:33,672 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:18:34,292 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:19:35,190 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:20:36,035 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:21:36,544 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:22:37,087 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:23:37,535 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:24:37,856 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:25:38,447 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:26:38,584 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:27:38,791 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:28:39,120 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:29:39,603 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.77 sec
+2020-04-16 16:29:47,843 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 1.77 sec
+MapReduce Total cumulative CPU time: 1 seconds 770 msec
+Ended Job = job_1587015889950_0009 with errors
+Error during job, obtaining debugging information...
+Examining task ID: task_1587015889950_0009_m_000000 (and more) from job job_1587015889950_0009
+
+Task with the most failures(4):
+-----
+Task ID:
+  task_1587015889950_0009_r_000000
+
+URL:
+  http://m2:8088/taskdetails.jsp?jobid=job_1587015889950_0009&tipid=task_1587015889950_0009_r_000000
+-----
+Diagnostic Messages for this Task:
+Container launch failed for container_1587015889950_0009_01_000007 : java.net.ConnectException: Call From m2/192.168.43.139 to localhost:33741 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:791)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:731)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1474)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1401)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:232)
+	at com.sun.proxy.$Proxy37.startContainers(Unknown Source)
+	at org.apache.hadoop.yarn.api.impl.pb.client.ContainerManagementProtocolPBClientImpl.startContainers(ContainerManagementProtocolPBClientImpl.java:96)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:187)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+	at com.sun.proxy.$Proxy38.startContainers(Unknown Source)
+	at org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl$Container.launch(ContainerLauncherImpl.java:151)
+	at org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl$EventProcessor.run(ContainerLauncherImpl.java:369)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:530)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:494)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:609)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:707)
+	at org.apache.hadoop.ipc.Client$Connection.access$2800(Client.java:370)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1523)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1440)
+	... 15 more
+
+
+FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 2  Reduce: 1   Cumulative CPU: 1.77 sec   HDFS Read: 9970 HDFS Write: 0 FAIL
+Total MapReduce CPU Time Spent: 1 seconds 770 msec
+hive> select a.name,a.city,a.salary,b.email from employee a full outer join mailid b on a.name=b.name;
+WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+Query ID = mohit_20200416162958_f94a4cf1-75b3-445e-aef3-eee72c503dbd
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1587015889950_0010, Tracking URL = http://m2:8088/proxy/application_1587015889950_0010/
+Kill Command = /usr/local/hadoop-2.6.5/bin/hadoop job  -kill job_1587015889950_0010
+Hadoop job information for Stage-1: number of mappers: 2; number of reducers: 1
+2020-04-16 16:33:05,817 Stage-1 map = 0%,  reduce = 0%
+2020-04-16 16:33:14,107 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.58 sec
+2020-04-16 16:34:14,631 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.58 sec
+2020-04-16 16:35:14,944 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.58 sec
+2020-04-16 16:36:15,063 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.58 sec
+2020-04-16 16:36:25,386 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 2.68 sec
+MapReduce Total cumulative CPU time: 2 seconds 680 msec
+Ended Job = job_1587015889950_0010
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 2  Reduce: 1   Cumulative CPU: 2.68 sec   HDFS Read: 15132 HDFS Write: 367 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 680 msec
+OK
+	NULL	NULL	NULL
+anamika Kanyakumari	200000.0	NULL
+anita	Selam	250000.0	NULL
+NULL	NULL	NULL	nagesh@yahoo.com
+swetha	Chennai 250000.0	swetha@gmail.com
+tarun	Pondi	300000.0	tarun@edureka.in
+NULL	NULL	NULL	venki@gmail.com
+Time taken: 387.723 seconds, Fetched: 7 row(s)
+hive> exit;
+mohit@edge1:/usr/local/hive$ logout
+Connection to edge1 closed.
+mohit:~/MyProjects/BigData/practice/hive (master) $ exit
+exit
+
+Script done on 2020-04-16 16:38:06+0530
