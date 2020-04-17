@@ -1,6 +1,6 @@
 
-##Find Customers based on Age Group
-#####Hive is running over yarn
+## Find Customers based on Age Group
+### Hive is running over yarn
 >Starting DFS on node:m1
 ```sh
 mohit:~/MyProjects/BigData/practice/hive (master) $ ssh m1
@@ -150,7 +150,7 @@ mohit@edge1:/usr/local/hive$ #take a look intotassign4
 mohit@edge1:/usr/local/hive$ ls assign4
 custs  practicals.txt  txns1.txt
 ```
-###Hive
+### Hive
 ```hive
 mohit@edge1:/usr/local/hive$ hive
 SLF4J: Class path contains multiple SLF4J bindings.
